@@ -1,0 +1,11 @@
+body{
+    font-family: 'Trebuchet MS';
+}
+.headings{
+    background-color: orange;
+    color:white;
+}
+th{
+    background-color: blue;
+    color: white;
+}

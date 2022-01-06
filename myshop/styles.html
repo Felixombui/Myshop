@@ -1,0 +1,305 @@
+<html>
+<title>Myshop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+        font-family: 'Trebuchet MS';
+        text-align: left;
+    }
+    
+    #page-container {
+        position: relative;
+        min-height: 100vh;
+    }
+    
+    #content-wrap {
+        padding-bottom: 2.5rem;
+        /* Footer height */
+    }
+    
+    #footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2.5rem;
+        /* Footer height */
+    }
+    
+    a:link {
+        color: rgb(42, 151, 165);
+        background-color: none;
+        text-decoration: none;
+    }
+    
+    a:active {
+        color: black;
+        background-color: none;
+    }
+    
+    a:hover {
+        color: cyan;
+        background-color: none;
+    }
+    
+    input {
+        width: 100%;
+        border-radius: 5px;
+        border-color: cyan;
+        padding: 14px;
+    }
+    
+    input:hover {
+        border-color: blue;
+        text-decoration: none;
+    }
+    
+    select {
+        width: 100%;
+        border-radius: 5px;
+        padding: 10px;
+        border: none;
+        border-bottom: 1px solid cyan;
+    }
+    
+    select:hover {
+        border-color: blue;
+        text-decoration: none;
+    }
+    
+    form {
+        text-align: left;
+    }
+    
+    input[type=submit] {
+        background-color: blue;
+        color: aqua;
+        margin-top: 7px;
+    }
+    
+    input[type=number] {
+        width: 70px;
+        border: none;
+        border-bottom: 1px solid cyan;
+    }
+    
+    input[type=text] {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid cyan;
+    }
+    
+    input[type=email] {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid cyan;
+    }
+    
+    input[type=password] {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid cyan;
+    }
+    
+    .user {
+        background-color: coral;
+        text-align: left;
+        padding: 8px;
+        color: aqua;
+    }
+    
+    .roundimage {
+        border-radius: 60%;
+        background-color: green;
+        width: 120px;
+    }
+    
+    .heading {
+        background-color: rgb(54, 6, 52);
+        color: aqua;
+        padding: 18px;
+    }
+    
+    .subheading {
+        background-color: rgb(54, 6, 52);
+        color: aqua;
+        padding: 8px;
+        border-collapse: collapse;
+    }
+    
+    .smalltext {
+        font-size: 12;
+    }
+    
+    .report {
+        border: 1px;
+        border-color: black;
+        border-collapse: collapse;
+        font-size: 13;
+    }
+    
+    a:heading {
+        color: aqua;
+    }
+    
+    .err {
+        background-color: red;
+        color: aqua;
+        font-size: 12;
+        padding: 8px;
+        border-radius: 5px;
+    }
+    
+    .success {
+        background-color: green;
+        color: aqua;
+        font-size: 12;
+        padding: 8px;
+        border-radius: 5px;
+    }
+    
+    #thumb {
+        clear: both;
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    #thumb ul {
+        width: 100%;
+    }
+    
+    #thumb ul li {
+        display: inline;
+        font-family: arial;
+        float: left;
+        padding-right: 200px;
+        padding-left: 60px;
+        padding-top: 40px;
+        padding-bottom: 160px;
+        width: 150px;
+        height: 150px;
+        font-size: 12;
+    }
+    
+    #thumb ul li img {
+        float: left;
+        width: 100%;
+        height: 80%;
+        border: #ccc solid 1px;
+        padding: 50px;
+        text-align: center;
+    }
+    
+    .orderbutton {
+        padding: 8px;
+        border-radius: 8px;
+        background-color: green;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    .menu {
+        background-color: none;
+        color: aqua;
+        padding: 8px;
+        border-radius: 8px;
+        position: relative;
+        display: inline-block;
+        /*border-bottom: 1px dotted black;*/
+    }
+    
+    .menutext {
+        visibility: hidden;
+        width: 200px;
+        /*56vh;/*400px;*/
+        background-color: orange;
+        color: #fff;
+        text-align: left;
+        border-radius: 2px;
+        padding: 5px;
+        position: absolute;
+        z-index: 5;
+        top: -250%;
+        margin-left: -200px;
+        /*-400px;/*-110px;*/
+        margin-top: 130px;
+        float: right;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+    
+    .menu .menutext::after {
+        content: "";
+        position: absolute;
+        top: 0%;
+        left: 150%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+    }
+    
+    .menu:hover .menutext {
+        visibility: visible;
+        opacity: 1;
+    }
+    
+    .menu table {
+        border-collapse: collapse;
+    }
+    
+    .menu tr {
+        border-bottom: 1px solid pink;
+    }
+    
+    .menu td {
+        padding: 8px;
+    }
+    
+    th {
+        background-color: orange;
+        color: white;
+        padding: 10px;
+    }
+    
+    .buttonstyle {
+        border-radius: 5px;
+        width: 40%;
+        float: right;
+        border-color: darkblue;
+        padding: 5px;
+    }
+    
+    .category {
+        border: 1px solid pink;
+        margin-top: 5px;
+        margin-left: 5px;
+        width: 47%;
+        height: 100px;
+        text-align: center;
+        float: left;
+    }
+    
+    @media screen and (max-width: 800px) {
+        table {
+            width: 100%;
+            text-align: center;
+        }
+        .err {
+            text-align: left;
+        }
+        .textarea {
+            width: 100%;
+            background-color: cyan;
+        }
+        .orderbutton {
+            padding: 8px;
+            border-radius: 8px;
+            background-color: green;
+        }
+    }
+</style>
+
+</html>
